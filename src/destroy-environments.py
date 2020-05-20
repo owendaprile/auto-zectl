@@ -34,11 +34,6 @@ if __name__ == '__main__':
     keep_environments = config['auto-zectl'].getint('KeepEnvironments')
     esp_disk_space = config['auto-zectl'].getfloat('ESPDiskSpace') / 100
 
-    print(boot_environment_identifier)
-    print(esp)
-    print(keep_environments)
-    print(esp_disk_space)
-
     if get_esp_usage(esp) < esp_disk_space:
         exit(0)
 

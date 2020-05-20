@@ -1,0 +1,13 @@
+[Trigger]
+Operation=Install
+Operation=Upgrade
+Operation=Remove
+Type=Package
+Target=*
+
+[Action]
+Description=Destroying old boot environments...
+Exec=/usr/bin/python /usr/lib/auto-zectl/destroy-environments.py
+When=PostTransaction
+Depends=python
+Depends=zectl

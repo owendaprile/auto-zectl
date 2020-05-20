@@ -1,0 +1,14 @@
+[Trigger]
+Operation=Install
+Operation=Upgrade
+Operation=Remove
+Type=Package
+Target=*
+
+[Action]
+Description=Creating boot environment...
+Exec=/usr/bin/python /usr/lib/auto-zectl/create-environment.py
+When=PreTransaction
+Depends=python
+Depends=zectl
+AbortOnFail
